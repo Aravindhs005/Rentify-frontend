@@ -1,0 +1,127 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+
+.listing-card {
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 320px;
+  padding: 10px; // Ensure no padding
+  margin-right: 20px; // Ensure no margin
+  // background-color: green;
+  overflow: hidden; // Ensure no overflow
+  
+  &:hover {
+    @include shadow;
+  }
+
+  .slider-container {
+    width: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+
+    margin: 0; // Ensure no margin at the top
+    padding: 0; // Ensure no padding
+
+    .slider-bottom {
+      display: flex;
+      transition: transform 0.5s ease;
+      margin: 0; // Ensure no margin
+      padding: 0; // Ensure no padding
+
+      .slide-image {
+        position: relative;
+        flex: 0 0 100%;
+        width: 100%;
+        height: 200px; // Fixed height to maintain aspect ratio
+        display: flex;
+        align-items: center;
+        justify-content: center; // Center the content
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: brightness(85%);
+        }
+
+        .prev-button,
+        .next-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          padding: 6px;
+          border-radius: 50%;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: black;
+          background-color: white;
+          border: 1px solid black;
+          z-index: 9999;
+
+          &:hover {
+            background-color: teal;
+          }
+        }
+
+        .prev-button {
+          left: 5px;
+        }
+
+        .next-button {
+          right: 10px;
+        }
+      }
+    }
+  }
+
+  h3 {
+    color: teal;
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0; // Margin to separate from the slider
+  }
+
+  p {
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    margin: 5px 0; // Margin to separate from the heading
+  }
+
+  span {
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 5px 0; // Margin to separate from the paragraph
+  }
+
+  .favorite {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: none;
+    font-size: 20px;
+    // border: 1px solid black;
+    cursor: auto;
+    z-index: 999;
+    background: none;
+  }
+
+  .edit-button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    height: 25px;
+    border: 1px solid black;
+    background-color: cadetblue;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: auto;
+    z-index: 999;
+  }
+}

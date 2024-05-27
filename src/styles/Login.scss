@@ -1,0 +1,106 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: teal; // Set a background color for the login page
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 40%;
+    padding: 40px;
+    background-color: white; // Background color for the content
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Light shadow for depth
+
+    @include lg {
+      width: 60%;
+    }
+
+    @include mm {
+      width: 80%;
+    }
+
+    &_form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+
+      input {
+        width: 100%;
+        padding: 7px 15px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid teal; // Border color teal
+        outline: none;
+        text-align: center;
+        color: teal; // Text color teal
+
+        &:not(:placeholder-shown):focus {
+          background: transparent;
+        }
+
+        &::placeholder {
+          color: teal; // Placeholder color teal
+        }
+      }
+
+      button {
+        margin-top: 15px;
+        @include buttonStyle;
+        width: 50%;
+        background-color: teal; // Button background teal
+        color: white; // Button text color white
+
+        &:hover {
+          box-shadow: 0 0 10px 3px rgba(0, 128, 128, 0.7); // Hover effect with teal shadow
+        }
+      }
+    }
+
+    &_google {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: teal; // Link color teal
+      font-size: 17px;
+      font-weight: 600;
+      text-align: center;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      color: teal; // Paragraph text color teal
+      font-size: 13px;
+      text-align: center;
+    }
+  }
+  
+  &_image {
+    width: 100%; // Adjust the width of the image container as needed
+    padding: 20px; // Add padding to create space between the image and content
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 100%; // Ensure the image fits within the container
+      height: auto; // Maintain aspect ratio
+    }
+  }
+}

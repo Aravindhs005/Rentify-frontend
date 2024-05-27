@@ -1,0 +1,133 @@
+@import './variables.scss';
+@import './breakpoints.scss';
+
+.register {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    background-color: teal; // Set a background color for the register page
+
+    &_content {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        width: 80%;
+        padding: 40px;
+        background-color: white;// Background color for the content
+        border-radius: 20px;
+
+        @include lg {
+          flex-direction: column;
+            width: 60%;
+            padding: 30px;
+        }
+
+        @include mm {
+            width: 80%;
+            padding: 30px;
+
+        }
+
+        .img-cont {
+            width: 50%; // Set width for the image container
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        @include lg {
+            width: 60%;
+            display: none;
+            padding: 30px;
+        }
+
+        @include mm {
+            width: 80%;
+            display: none;
+            padding: 30px;
+
+        }
+        
+
+            .register_image {
+                width: 100%;
+                max-width: 100%; // Ensure the image does not exceed its container
+                height: auto;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .form-cont {
+            width: 45%; // Set width for the form container
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 30px;
+            
+        @include lg {
+            width: 60%;
+            padding: 30px;
+        }
+
+        @include mm {
+            width: 80%;
+            padding: 30px;
+
+        }
+
+            .register_content_form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+
+                input {
+                    width: 100%;
+                    padding: 7px 15px;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid teal; // Border color teal
+                    outline: none;
+                    text-align: center;
+                    color: teal; // Text color teal
+
+                    &:not(:placeholder-shown):focus {
+                        background: transparent;
+                    }
+
+                    &::placeholder {
+                        color: teal; // Placeholder color teal
+                    }
+                }
+
+                button {
+                    margin-top: 15px;
+                    @include buttonStyle;
+                    width: 100%; // Set button width to 100%
+                    background-color: teal; // Button background teal
+                    color: white; // Button text color white
+
+                    &:hover {
+                        box-shadow: 0 0 10px 3px rgba(0, 128, 128, 0.7); // Hover effect with teal shadow
+                    }
+                }
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: teal; // Link color teal
+            font-size: 13px;
+            margin-top: 10px;
+            text-align: center;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
